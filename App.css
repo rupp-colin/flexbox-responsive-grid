@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+}
+.container {
+    background: lightblue;
+    width: calc(100% - 20px);
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px dashed grey;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+div[class^="col-"] {
+    border: 2px dotted blue;
+    display: flex;
+    justify-content: center;
+    padding: 6px;
+}
+
+
+/* Mobile defaults */
+.col-3, .col-4, .col-5, .col-6, .col-7, .col-8,
+.col-9, .col-10, .col-11, .col-12 {
+    flex: 0 0 100%
+}
+
+/* common screen widths
+ *
+ * 320 - older iphones
+ * 375 - iphone
+ * 412 - nexus and google pixel
+ * 480 - galaxy note phones
+ * 600 - nexus 7 tablet
+ * 768 - most other tablets
+ * 800 - samsung galaxy tablet
+ * 1000 - monitors...
+ * 1200 - bigger moniters
+ */
+
+    @media only screen and (min-width: 480px) {
+        .col-3 {
+            flex: 0 0 calc(100% / 2)
+        }
+    }
+
+    @media only screen and (min-width: 600px) {
+        .col-3 {
+            flex: 1 0 calc(100% / 3)
+        }
+        .col-4 {
+            flex: 0 0 calc(100% / 2)
+        }
+    }
+
+    @media only screen and (min-width: 768px) {
+        .col-4 {
+            flex: 0 0 calc(100% / 2)
+        }
+    }
+
+    @media only screen and (min-width: 768px) {
+        .col-6 {
+            flex: 0 0 calc(100% / 2)
+        }
+    }
+    @media only screen and (min-width: 1000px) {
+        .col-12 {
+            flex: 0 0 100%;
+        }
+        .col-6 {
+            flex: 0 0 calc(100% / 12 * 6);
+        }
+        .col-4 {
+            flex: 0 0 calc(100% / 12 * 4);
+        }
+        .col-3 {
+            flex: 0 0 calc(100% / 12 * 3);
+        }
+    }
